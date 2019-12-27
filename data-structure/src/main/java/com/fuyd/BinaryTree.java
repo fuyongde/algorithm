@@ -68,7 +68,6 @@ public class BinaryTree<E> {
         return list;
     }
 
-
     public List<E> zhongxu(BinaryTree<E> tree, List<E> list) {
         if (tree.left != null) {
             zhongxu(tree.left, list);
@@ -79,7 +78,6 @@ public class BinaryTree<E> {
         }
         return list;
     }
-
 
     public List<E> houxu(BinaryTree<E> tree, List<E> list) {
         if (tree.left != null) {
