@@ -36,24 +36,24 @@ public class BinaryTree<E> {
         tree.right.setRight(6);
 
         List<Integer> list = new ArrayList<>();
-        list = tree.qianxu(tree);
+        list = tree.houxu(tree);
         System.out.println(list);
     }
 
-    public List<E> qianxu(BinaryTree<E> tree, List<E> list) {
-        list.add(tree.element);
-        if (tree.left != null) {
-            qianxu(tree.left, list);
+    public List<E> qianxu(BinaryTree<E> root, List<E> list) {
+        list.add(root.element);
+        if (root.left != null) {
+            qianxu(root.left, list);
         }
-        if (tree.right != null) {
-            qianxu(tree.right, list);
+        if (root.right != null) {
+            qianxu(root.right, list);
         }
         return list;
     }
 
-    public List<E> qianxu(BinaryTree<E> tree) {
+    public List<E> qianxu(BinaryTree<E> root) {
         Stack<BinaryTree<E>> stack = new Stack<>();
-        stack.push(tree);
+        stack.push(root);
         List<E> list = new ArrayList<>();
         while (!stack.isEmpty()) {
             BinaryTree<E> binaryTree = stack.pop();
@@ -68,25 +68,65 @@ public class BinaryTree<E> {
         return list;
     }
 
-    public List<E> zhongxu(BinaryTree<E> tree, List<E> list) {
-        if (tree.left != null) {
-            zhongxu(tree.left, list);
+    public List<E> zhongxu(BinaryTree<E> root, List<E> list) {
+        if (root.left != null) {
+            zhongxu(root.left, list);
         }
-        list.add(tree.element);
-        if (tree.right != null) {
-            zhongxu(tree.right, list);
+        list.add(root.element);
+        if (root.right != null) {
+            zhongxu(root.right, list);
         }
         return list;
     }
 
-    public List<E> houxu(BinaryTree<E> tree, List<E> list) {
-        if (tree.left != null) {
-            houxu(tree.left, list);
+    public List<E> zhongxu(BinaryTree<E> root) {
+        Stack<BinaryTree<E>> stack = new Stack<>();
+        BinaryTree<E> node = root;
+        List<E> list = new ArrayList<>();
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.add(node);
+                node = node.left;
+            }
+            if (!stack.isEmpty()) {
+                BinaryTree<E> tmp = stack.pop();
+                list.add(tmp.element);
+                node = tmp.right;
+            }
         }
-        if (tree.right != null) {
-            houxu(tree.right, list);
+        return list;
+    }
+
+    public List<E> houxu(BinaryTree<E> root, List<E> list) {
+        if (root.left != null) {
+            houxu(root.left, list);
         }
-        list.add(tree.element);
+        if (root.right != null) {
+            houxu(root.right, list);
+        }
+        list.add(root.element);
+        return list;
+    }
+
+    public List<E> houxu(BinaryTree<E> root) {
+        Stack<BinaryTree<E>> stack = new Stack<>();
+        Stack<BinaryTree<E>> output = new Stack<>();
+        BinaryTree<E> node = root;
+        while (node != null || !stack.isEmpty()) {
+            if (node != null) {
+                stack.push(node);
+                output.push(node);
+                node = node.right;
+            } else {
+                node = stack.pop();
+                node = node.left;
+            }
+        }
+        List<E> list = new ArrayList<>();
+        while (output.size() > 0) {
+            node = output.pop();
+            list.add(node.element);
+        }
         return list;
     }
 }
