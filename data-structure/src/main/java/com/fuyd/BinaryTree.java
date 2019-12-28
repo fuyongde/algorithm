@@ -27,19 +27,6 @@ public class BinaryTree<E> {
         this.right = new BinaryTree<>(right);
     }
 
-    public static void main(String[] args) {
-        BinaryTree<Integer> tree = new BinaryTree<>(1);
-        tree.setLeft(2);
-        tree.setRight(3);
-        tree.left.setLeft(4);
-        tree.left.setRight(5);
-        tree.right.setRight(6);
-
-        List<Integer> list = new ArrayList<>();
-        list = tree.houxu(tree);
-        System.out.println(list);
-    }
-
     public List<E> qianxu(BinaryTree<E> root, List<E> list) {
         list.add(root.element);
         if (root.left != null) {

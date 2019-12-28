@@ -14,15 +14,15 @@ public class Problems206 {
         // 定义一个新的头部
         ListNode newHead = null;
         // 定义一个临时变量，并赋初始值为原链表头
-        ListNode tmpNode = head;
-        while (tmpNode != null) {
+        ListNode current = head;
+        while (current != null) {
             // 获取临时变量的下一个结点
-            ListNode next = tmpNode.next;
+            ListNode next = current.next;
             // 将新的头作为临时结点的下一个结点
-            tmpNode.next = newHead;
+            current.next = newHead;
             // 将临时变量赋值给新的链表头
-            newHead = tmpNode;
-            tmpNode = next;
+            newHead = current;
+            current = next;
         }
         return newHead;
     }
