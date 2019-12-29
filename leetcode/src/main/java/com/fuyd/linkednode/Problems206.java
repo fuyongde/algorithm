@@ -1,4 +1,4 @@
-package com.fuyd.problems200;
+package com.fuyd.linkednode;
 
 /**
  * 反转单链表

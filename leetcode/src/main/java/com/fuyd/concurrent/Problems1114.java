@@ -1,4 +1,4 @@
-package com.fuyd.proleems1100;
+package com.fuyd.concurrent;
 
 import java.util.concurrent.Semaphore;
 
@@ -9,10 +9,9 @@ import java.util.concurrent.Semaphore;
 public class Problems1114 {
 
     public static void main(String[] args) throws InterruptedException {
-        Runnable r1 = ()-> System.out.println("r1");
-        Runnable r2 = ()-> System.out.println("r2");
-        Runnable r3 = ()-> System.out.println("r3");
-
+        Runnable r1 = () -> System.out.println("r1");
+        Runnable r2 = () -> System.out.println("r2");
+        Runnable r3 = () -> System.out.println("r3");
         Foo foo = new Foo();
         foo.first(r1);
         foo.second(r2);

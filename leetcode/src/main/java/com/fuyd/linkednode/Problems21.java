@@ -1,4 +1,4 @@
-package com.fuyd.problems0;
+package com.fuyd.linkednode;
 
 /**
  * 合并两个有序单链表
