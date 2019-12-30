@@ -43,16 +43,4 @@ public class Problems21 {
         return preHead.next;
     }
 
-    public static void main(String[] args) {
-
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

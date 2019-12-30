@@ -44,12 +44,4 @@ public class Problems206 {
         System.out.println(s);
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

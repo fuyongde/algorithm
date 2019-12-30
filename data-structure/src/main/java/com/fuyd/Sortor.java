@@ -67,10 +67,36 @@ public class Sortor {
             tmp = array[i + 1];
             while (j > -1 && tmp <= array[j]) {
                 array[j + 1] = array[j];
-                j --;
+                j--;
             }
             array[j + 1] = tmp;
         }
+        return array;
+    }
+
+    public static int[] quickSort(int[] array, int startIndex, int endIndex) {
+        if (startIndex >= endIndex) {
+            // left >= right 说明数组只有一个元素，不需要排序
+            return array;
+        }
+        int key = array[startIndex];
+        int i = startIndex;
+        int j = endIndex;
+        while (i < j) {
+            while (array[j] >= key && i < j) {
+                j--;
+            }
+            while (array[i] <= key && i < j) {
+                i++;
+            }
+            if (i < j) {
+                swap(array, i, j);
+            }
+        }
+        array[startIndex] = array[i];
+        array[i] = key;
+        quickSort(array, startIndex, i - 1);
+        quickSort(array, i + 1, endIndex);
         return array;
     }
 

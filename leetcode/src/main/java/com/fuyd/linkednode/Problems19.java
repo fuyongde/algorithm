@@ -13,25 +13,17 @@ public class Problems19 {
         int size = 0;
         ListNode node = head;
         while (node != null) {
-            size ++;
+            size++;
             node = node.next;
         }
         int m = size - n;
         node = sentinel;
         while (m > 0) {
-            m --;
+            m--;
             node = node.next;
         }
         node.next = node.next.next;
         return sentinel.next;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

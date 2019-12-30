@@ -47,4 +47,10 @@ public class SortorTest {
         int[] array = Sortor.charu(items);
         System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
     }
+
+    @Test
+    public void quickSort() {
+        int[] array = Sortor.quickSort(items, 0, items.length - 1);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+    }
 }
