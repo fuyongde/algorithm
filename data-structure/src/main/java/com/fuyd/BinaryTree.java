@@ -1,8 +1,7 @@
 package com.fuyd;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
+import java.util.*;
 
 /**
  * 二叉树的遍历
@@ -113,6 +112,23 @@ public class BinaryTree<E> {
         while (output.size() > 0) {
             node = output.pop();
             list.add(node.element);
+        }
+        return list;
+    }
+
+    public List<E> cengxu(BinaryTree<E> root) {
+        Queue<BinaryTree<E>> queue = new ArrayDeque<>();
+        queue.offer(root);
+        List<E> list = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            BinaryTree<E> node = queue.poll();
+            list.add(node.element);
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
         }
         return list;
     }
