@@ -38,4 +38,22 @@ public class Problems19 {
         return sentinel.next;
     }
 
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        // 哨兵
+        ListNode sentinel = new ListNode(0);
+        sentinel.next = head;
+        ListNode fastNode = sentinel, slowNode = sentinel;
+        // fastNode 节点先跑，fastNode 节点跑到第 n 个节点的时候, slowNode 节点开始跑
+        // 当 fastNode 节点跑到最后一个节点时，slowNode 节点所在的位置就是第 （L-n ） 个节点，也就是倒数第 n+1（L代表总链表长度）
+        while (fastNode != null) {
+            fastNode = fastNode.next;
+            if (n < 1 && fastNode != null) {
+                slowNode = slowNode.next;
+            }
+            n--;
+        }
+        slowNode.next = slowNode.next.next;
+        return sentinel.next;
+    }
+
 }
