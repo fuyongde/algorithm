@@ -2,8 +2,6 @@ package com.fuyd;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author fuyongde
  * @date 2020/1/1 15:11
