@@ -6,7 +6,7 @@ package com.fuyd;
  */
 public class Sortor {
 
-    public static int[] maopao(int[] array) {
+    public static void maopao(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
                 if (array[j] > array[j + 1]) {
@@ -14,10 +14,9 @@ public class Sortor {
                 }
             }
         }
-        return array;
     }
 
-    public static int[] maopao2(int[] array) {
+    public static void maopao2(int[] array) {
         for (int i = 0; i < array.length; i++) {
             boolean isSorted = true;
             for (int j = 0; j < array.length - 1; j++) {
@@ -31,10 +30,9 @@ public class Sortor {
                 break;
             }
         }
-        return array;
     }
 
-    public static int[] maopao3(int[] array) {
+    public static void maopao3(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
@@ -42,10 +40,9 @@ public class Sortor {
                 }
             }
         }
-        return array;
     }
 
-    public static int[] xuanze(int[] array) {
+    public static void xuanze(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -57,10 +54,9 @@ public class Sortor {
                 swap(array, i, minIndex);
             }
         }
-        return array;
     }
 
-    public static int[] charu(int[] array) {
+    public static void charu(int[] array) {
         int j, tmp;
         for (int i = 0; i < array.length - 1; i++) {
             j = i;
@@ -71,22 +67,22 @@ public class Sortor {
             }
             array[j + 1] = tmp;
         }
-        return array;
     }
 
-    public static int[] quickSort(int[] array, int startIndex, int endIndex) {
+    public static void quickSort(int[] array, int startIndex, int endIndex) {
         if (startIndex >= endIndex) {
             // left >= right 说明数组只有一个元素，不需要排序
-            return array;
+            return;
         }
-        int key = array[startIndex];
+        // 这里基础元素可以在数组里随机选，这里我们直接以 startIndex 作为基准元素
+        int pivot = array[startIndex];
         int i = startIndex;
         int j = endIndex;
         while (i < j) {
-            while (array[j] >= key && i < j) {
+            while (array[j] >= pivot && i < j) {
                 j--;
             }
-            while (array[i] <= key && i < j) {
+            while (array[i] <= pivot && i < j) {
                 i++;
             }
             if (i < j) {
@@ -94,10 +90,28 @@ public class Sortor {
             }
         }
         array[startIndex] = array[i];
-        array[i] = key;
+        array[i] = pivot;
         quickSort(array, startIndex, i - 1);
         quickSort(array, i + 1, endIndex);
-        return array;
+    }
+
+    public static void quickSort2(int[] array, int startIndex, int endIndex) {
+        if (startIndex >= endIndex) {
+            return;
+        }
+        // 这里基础元素可以在数组里随机选，这里我们直接以 startIndex 作为基准元素
+        int pivot = array[startIndex];
+        int mark = startIndex;
+        for (int i = startIndex + 1; i <= endIndex; i++) {
+            if (array[i] < pivot) {
+                mark++;
+                swap(array, i, mark);
+            }
+        }
+        array[startIndex] = array[mark];
+        array[mark] = pivot;
+        quickSort2(array, startIndex, mark - 1);
+        quickSort2(array, mark + 1, endIndex);
     }
 
     private static void swap(int[] array, int i, int j) {

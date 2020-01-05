@@ -20,37 +20,43 @@ public class SortorTest {
 
     @Test
     public void maopao() {
-        int[] array = Sortor.maopao(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.maopao(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
     public void maopao2() {
-        int[] array = Sortor.maopao2(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.maopao2(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
     public void maopao3() {
-        int[] array = Sortor.maopao3(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.maopao3(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
     public void xuanze() {
-        int[] array = Sortor.xuanze(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.xuanze(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
     public void charu() {
-        int[] array = Sortor.charu(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.charu(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
     public void quickSort() {
-        int[] array = Sortor.quickSort(items, 0, items.length - 1);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(array)));
+        Sortor.quickSort(items, 0, items.length - 1);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
+    }
+
+    @Test
+    public void quickSort2() {
+        Sortor.quickSort2(items, 0, items.length - 1);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 }
