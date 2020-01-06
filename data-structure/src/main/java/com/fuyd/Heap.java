@@ -48,19 +48,6 @@ public class Heap {
         array[childIndex] = tmp;
     }
 
-    public static void upAdjust2(int[] array) {
-        int childIndex = array.length - 1;
-        int parentIndex = (childIndex - 1) / 2;
-        int tmp = array[childIndex];
-        while (childIndex > 0 && tmp < array[parentIndex]) {
-            // 将父子节点进行交换
-            array[childIndex] = array[parentIndex];
-            childIndex = parentIndex;
-            parentIndex = (parentIndex - 1) / 2;
-        }
-        array[childIndex] = tmp;
-    }
-
     /**
      * 下沉调整
      *

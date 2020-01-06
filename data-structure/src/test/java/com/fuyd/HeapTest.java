@@ -20,7 +20,7 @@ public class HeapTest {
     @Test
     public void upAdjust() {
         int[] array = {1, 3, 2, 6, 5, 7, 8, 9, 10, 0};
-        Heap.upAdjust2(array);
+        Heap.upAdjust(array);
         // [0, 1, 2, 6, 3, 7, 8, 9, 10, 5]
         System.out.println(Arrays.toString(array));
     }
