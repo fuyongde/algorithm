@@ -56,4 +56,36 @@ public class Problems202 {
         }
         return list;
     }
+
+    /**
+     * 除了“快慢指针”思路，本题还可以归为数学规律题
+     * <p>
+     * 1-9中只有1和7是“快乐数”，其他均不是“快乐数”，
+     * 故若当前的n等于1或7，则直接返回true;否则，若n < 10，且不等于1或7，则直接返回false。
+     * <p>
+     * 若程序仍未结束，则计算其每个位置上的数字的平方和sum，并对其递归执行上述过程。
+     * <p>
+     * 作者：hegongshan
+     * 链接：https://leetcode-cn.com/problems/happy-number/solution/di-gui-by-hegongshan/
+     * 来源：力扣（LeetCode）
+     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     */
+    public boolean isHappy2(int n) {
+        if (n == 1 || n == 7) {
+            return true;
+        }
+        if (n < 10) {
+            return false;
+        }
+
+        int sum = 0;
+        while (n >= 1) {
+            int d = n % 10;
+            sum += d * d;
+            n /= 10;
+        }
+
+        return isHappy(sum);
+    }
+
 }
