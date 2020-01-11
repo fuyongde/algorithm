@@ -6,7 +6,7 @@ package com.fuyd;
  */
 public class Sortor {
 
-    public static void maopao(int[] array) {
+    public static void bubbleSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
                 if (array[j] > array[j + 1]) {
@@ -16,7 +16,7 @@ public class Sortor {
         }
     }
 
-    public static void maopao2(int[] array) {
+    public static void bubbleSort2(int[] array) {
         for (int i = 0; i < array.length; i++) {
             boolean isSorted = true;
             for (int j = 0; j < array.length - 1; j++) {
@@ -32,7 +32,7 @@ public class Sortor {
         }
     }
 
-    public static void maopao3(int[] array) {
+    public static void bubbleSort3(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
@@ -42,7 +42,7 @@ public class Sortor {
         }
     }
 
-    public static void xuanze(int[] array) {
+    public static void selectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -56,7 +56,7 @@ public class Sortor {
         }
     }
 
-    public static void charu(int[] array) {
+    public static void insertionSort(int[] array) {
         int j, tmp;
         for (int i = 0; i < array.length - 1; i++) {
             j = i;

@@ -2,6 +2,10 @@ package com.fuyd;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.Arrays;
 
@@ -14,37 +18,43 @@ public class SortorTest {
     private int[] items = {9, 4, 8, 7, 3, 1, 0, 2, 5, 6};
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         System.out.println(String.format("--- before : %s", Arrays.toString(items)));
     }
 
     @Test
-    public void maopao() {
-        Sortor.maopao(items);
+    public void bubbleSort() throws RunnerException {
+        Sortor.bubbleSort(items);
+        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
+
+        Options opt = new OptionsBuilder()
+                .include(Sortor.class.getSimpleName())
+                .forks(1)
+                .build();
+        new Runner(opt).run();
+    }
+
+    @Test
+    public void bubbleSort2() {
+        Sortor.bubbleSort2(items);
         System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
-    public void maopao2() {
-        Sortor.maopao2(items);
+    public void bubbleSort3() {
+        Sortor.bubbleSort3(items);
         System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
-    public void maopao3() {
-        Sortor.maopao3(items);
+    public void selectionSort() {
+        Sortor.selectionSort(items);
         System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 
     @Test
-    public void xuanze() {
-        Sortor.xuanze(items);
-        System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
-    }
-
-    @Test
-    public void charu() {
-        Sortor.charu(items);
+    public void insertionSort() {
+        Sortor.insertionSort(items);
         System.out.println(String.format("--- after  : %s", Arrays.toString(items)));
     }
 

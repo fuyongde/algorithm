@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -9,7 +8,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>data-structure</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -19,10 +17,17 @@
     </properties>
 
     <dependencies>
+        <!--jol 可以帮我们在运行时计算某个对象的大小-->
         <dependency>
             <groupId>org.openjdk.jol</groupId>
             <artifactId>jol-core</artifactId>
-            <version>0.8</version>
+            <version>0.9</version>
+        </dependency>
+        <!--jmh Java基准测试工具-->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>1.22</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
