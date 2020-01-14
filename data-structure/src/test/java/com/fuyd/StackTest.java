@@ -3,8 +3,6 @@ package com.fuyd;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author fuyongde
  * @date 2019/12/29 11:29
