@@ -17,8 +17,8 @@ public class GreatestCommonDivisor {
      * 在两个数都比较大时循环次数比较多，比如 a=10000，b=10001
      */
     public static int getGreatestCommonDivisor(int a, int b) {
-        int big = a > b ? a : b;
-        int small = a < b ? a : b;
+        int big = Math.max(a, b);
+        int small = Math.min(a, b);
         if (big % small == 0) {
             return small;
         }
@@ -37,8 +37,8 @@ public class GreatestCommonDivisor {
      * 取模运算性能较差
      */
     public static int getGreatestCommonDivisorByEuclidean(int a, int b) {
-        int big = a > b ? a : b;
-        int small = a < b ? a : b;
+        int big = Math.max(a, b);
+        int small = Math.min(a, b);
         if (big % small == 0) {
             return small;
         }
@@ -55,8 +55,8 @@ public class GreatestCommonDivisor {
         if (a == b) {
             return a;
         }
-        int big = a > b ? a : b;
-        int small = a < b ? a : b;
+        int big = Math.max(a, b);
+        int small = Math.min(a, b);
         return getGreatestCommonDivisorByChina(small, big - small);
     }
     
