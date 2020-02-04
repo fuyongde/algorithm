@@ -30,7 +30,7 @@ public class Solution101 {
     /**
      * 递归的方式
      * 时间复杂度：O(n)，因为需要遍历整个树，其中n时书中结点的总数
-     * 空间复杂度：O(n)，递归调用次数受树的高度的限制，最糟糕情况下，树时线性的，其高度为O(n)，因此糟糕情况下，由栈上的递归调用造成的空间复杂度为O(n)
+     * 空间复杂度：O(n)，递归调用次数受树的高度的限制，最糟糕情况下，树时线性的，其高度为 O(n)，因此糟糕情况下，由栈上的递归调用造成的空间复杂度为 O(n)
      */
     public boolean isSymmetric(TreeNode root) {
         return isMirror(root, root);
