@@ -45,19 +45,22 @@ package com.fuyd.other;
  */
 public class Solution26 {
 
+    /**
+     * 双指针法
+     * 时间复杂度：O(n)，假设数组长度为n，则 i 和 j 分别最多遍历 n 步
+     * 空间复杂度：O(1)
+     */
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
         int i = 0, j = 1;
         while (j < nums.length) {
-            if (nums[i] == nums[j]) {
-                j++;
-            } else {
+            if (nums[i] != nums[j]) {
                 i++;
                 nums[i] = nums[j];
-                j++;
             }
+            j++;
         }
         return i + 1;
     }
