@@ -28,6 +28,10 @@ package com.fuyd.other;
  */
 public class Solution7 {
 
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
+     */
     public static int reverse(int x) {
         boolean zhengshu = false;
         if (x >= 0) {
@@ -45,14 +49,18 @@ public class Solution7 {
         for (int i = tmp.length - 1; i >= 0; i--) {
             tmp[tmp.length - 1 - i] = array[i];
         }
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (int i : tmp) {
-            str += i;
+            str.append(i);
         }
-        long l = zhengshu ? Long.valueOf(str) : 0 - Long.valueOf(str);
+        long l = zhengshu ? Long.parseLong(str.toString()) : -Long.parseLong(str.toString());
         return (l > Integer.MAX_VALUE || l < Integer.MIN_VALUE) ? 0 : (int) l;
     }
 
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
     public static int reverse2(int x) {
         boolean zhengshu = false;
         if (x >= 0) {
@@ -67,6 +75,10 @@ public class Solution7 {
         return (l > Integer.MAX_VALUE || l < Integer.MIN_VALUE) ? 0 : (int) l;
     }
 
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
     public static int reverse3(int x) {
         long rs = 0;
         while (x != 0) {
