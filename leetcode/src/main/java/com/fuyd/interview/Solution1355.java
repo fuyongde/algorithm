@@ -21,7 +21,7 @@ import java.util.Arrays;
  * @author fuyongde
  * @date 2020/2/12 20:20
  */
-public class Solution03 {
+public class Solution1355 {
 
     /**
      * 排序之后，相同的的数值一定相邻
