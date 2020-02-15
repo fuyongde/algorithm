@@ -37,15 +37,15 @@ public class Solution509 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
-    public int fib(int N) {
-        if (N == 0) {
+    public int fib(int n) {
+        if (n == 0) {
             return 0;
         }
-        if (N == 1) {
+        if (n == 1) {
             return 1;
         }
         int x = 0, y = 1, z = 0;
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i <= n; i++) {
             z = x + y;
             x = y;
             y = z;
