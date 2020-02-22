@@ -18,6 +18,10 @@ package com.fuyd.other;
  */
 public class Solution557 {
 
+    /**
+     * 时间复杂度：O(n)，n 为字符串长度
+     * 空间复杂度：O(n)
+     */
     public String reverseWords(String s) {
         String[] array = s.split(" ");
         for (int i = 0; i < array.length; i++) {
