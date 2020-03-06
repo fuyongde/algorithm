@@ -32,6 +32,12 @@ package com.fuyd.other;
  */
 public class Solution70 {
 
+    /**
+     * 动态规划
+     * 题目类似于斐波那契数列
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
     public int climbStairs(int n) {
         if (n == 1) {
             return 1;
