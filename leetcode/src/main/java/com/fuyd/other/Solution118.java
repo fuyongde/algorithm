@@ -31,6 +31,10 @@ import java.util.List;
  */
 public class Solution118 {
 
+    /**
+     * 时间复杂度：O(n*n²)
+     * 空间复杂度：O(n*n²)
+     */
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> triangle = new ArrayList<>();
         if (numRows == 0) {
